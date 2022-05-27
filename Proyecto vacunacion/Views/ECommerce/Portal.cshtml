@@ -1,0 +1,43 @@
+﻿@model IEnumerable<Proyecto_vacunacion.Models.Producto>
+
+@{
+    ViewData["Title"] = "Portal";
+}
+<!--agregando estilos-->
+<link rel="stylesheet" href="~/css/estilos.css" />
+
+<h1>Portal</h1>
+
+<!--boton para ir a la canasta-->
+<p>
+    <a asp-action="Canasta" class="btn btn-primary">Ir a la Canasta</a>
+</p>
+
+
+<div class="portal">
+     <!--recorido del metodo listado que te envia en controlador del modelo producto llamado aqui como item-->
+@foreach (var item in Model) {
+
+    <div class="registro">
+      <em>Codigo: @Html.DisplayFor(modelItem => item.idproducto)</em>
+      <br />
+      <em>Descripcion: @Html.DisplayFor(modelItem => item.descripcion)</em>
+      <br />
+      <em>Categoria: @Html.DisplayFor(modelItem => item.categoria)</em>
+      <br />
+      <em>Precio: @Html.DisplayFor(modelItem => item.precio)</em>
+      <br />
+      <em>Unidades: @Html.DisplayFor(modelItem => item.stock)</em>
+      <br />
+            <!--buscamos las imagenes por el codigo del producto -->  
+      <img src="@Url.Content($"~/imagenes/{item.idproducto}.jpg")">
+      <br />
+      <em>
+          <!--llama el evento seleccionar del comtroller enviando el id de item  -->  
+        @Html.ActionLink("Seleccionar", "Seleccionar", new { id=item.idproducto }) 
+      </em>
+    </div>
+
+}
+
+</div>

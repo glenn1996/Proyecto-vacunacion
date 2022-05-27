@@ -1,0 +1,75 @@
+﻿@model Proyecto_vacunacion.Models.Producto
+
+@{
+    ViewData["Title"] = "Seleccionar";
+}
+
+<h1>Seleccionar</h1>
+
+<!--listado de prodcuto seleccionado por el id -->
+<div>
+    <h4>Producto</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.idproducto)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.idproducto)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.descripcion)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.descripcion)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.categoria)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.categoria)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.precio)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.precio)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.stock)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.stock)
+        </dd>
+    </dl>
+</div>
+
+
+<div>
+    <!--formulario para para agregar la cantiad enviada por post al evento Seleccionar en post-->
+  <form asp-action="Seleccionar" method="post">
+
+    @Html.Hidden("codigo",Model.idproducto)
+    
+    <!--un TextBox para agregar la cantiad-->
+    <em>Ingrese la cantidad</em>
+    @Html.TextBox("cantidad",1,new{type="number",min=1,max=Model.stock})
+    <br />
+    <input type="submit" value="Agregar" class="btn btn-primary" />
+    <a asp-action="Portal" class="btn btn-primary">Ir al Portal</a>
+
+  </form>
+
+</div>
+
+<p>
+    <a asp-action="Canasta" class="btn btn-primary">Ir a la Canasta</a>
+</p>
+
+<div>
+
+  <!--imprimir el mensaje-->
+
+  @ViewBag.mensaje
+
+</div>
