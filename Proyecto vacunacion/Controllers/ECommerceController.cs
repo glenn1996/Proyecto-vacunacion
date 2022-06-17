@@ -14,9 +14,9 @@ namespace Proyecto_vacunacion.Controllers
            "MultipleActiveResultSets = True;TrustServerCertificate = False;Encrypt = False";
 
 
-        IEnumerable<Producto> listado()
+        IEnumerable<Producto0> listado()
         {
-            List<Producto> temporal = new List<Producto>();
+            List<Producto0> temporal = new List<Producto0>();
             using (SqlConnection cn = new SqlConnection(cadena))
 
             {
@@ -27,7 +27,7 @@ namespace Proyecto_vacunacion.Controllers
                 while (dr.Read())
 
                 {
-                    temporal.Add(new Producto()
+                    temporal.Add(new Producto0()
                     {
 
                         idproducto = dr.GetInt32(0),
@@ -42,7 +42,7 @@ namespace Proyecto_vacunacion.Controllers
             return temporal;
         }
 
-        Producto Buscar(int codigo = 0)
+        Producto0 Buscar(int codigo = 0)
         {
             return listado().FirstOrDefault(c => c.idproducto == codigo);
         }
@@ -65,7 +65,7 @@ namespace Proyecto_vacunacion.Controllers
         public IActionResult Seleccionar(int id = 0)
         {
             //llama al metodo buscar 
-            Producto reg = Buscar(id);
+            Producto0 reg = Buscar(id);
 
             if (reg == null)
 
@@ -83,7 +83,7 @@ namespace Proyecto_vacunacion.Controllers
         public IActionResult Seleccionar(int codigo, int cantidad)
         {
             //buscar el producto por su idproducto
-            Producto reg = Buscar(codigo);
+            Producto0 reg = Buscar(codigo);
             //en el modelo registro amalaceno los valores de prodcuto buscado por su id y la cantidad 
             Registro item = new Registro()
             {

@@ -1,0 +1,133 @@
+﻿
+@{
+    ViewData["Title"] = "IndexProducto";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="container-fluid">
+   
+    <!-- Page Heading -->
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">Reportes</h1>
+    </div>
+
+    <!-- Content Row -->
+    <div class="row">
+
+        <!-- muestra los productos registrados -->
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-primary shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                Productos Registrados
+                            </div>
+                            <!-- id de totalProductos -->
+                            <div id="totalProductos" class="h5 mb-0 font-weight-bold text-gray-800"></div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- muestra los proveedores registrados -->
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-success shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                Proveedores Registrados
+                            </div>
+                            <!-- id de totalProveedor -->
+                            <div id="totalProveedor" class="h5 mb-0 font-weight-bold text-gray-800"></div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+<div id="wrapper">
+
+</div>
+<a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+</a>
+
+
+<!-- modal de cerrar sesion-->
+<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Estas seguro de cerrar sesion?</h5>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" type="button" data-dismiss="modal">No</button>
+                <!-- boton para abrrir en la misma pantalla  -->
+                <a class="btn btn-primary" onclick="window.open('https://localhost:7033/Acceso/Login','_self')">Si</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+<script>
+    //esta es una funcion llamada cantidadProductos
+    cantidadProductos();
+    //esta es una funcion llamada cantidadProveedor
+    cantidadProveedor();
+
+   // function Salir() {
+     //       window.open ("@Url.Content("~/Acceso/Logueo")");
+       // }
+
+
+    function cantidadProductos() {
+        var e = 1;
+        // aqui llamamos al formulario  de la pagina con id totalProductos
+        totalProductos = document.getElementById('totalProductos');
+         // llamamos a la funcion listar  productos del controlador productos
+        fetch("ListaProducto").
+            then(response => response.json()).
+            then(respuesta => {
+                console.log(respuesta)
+                let resultado = "";
+                 //mostramos cantidad
+                resultado += '<tr taskId=' + respuesta.codigo + '>' + '<td>' + respuesta.length + '</td>'
+                totalProductos.innerHTML = resultado;
+
+
+            });
+    }
+
+    function cantidadProveedor() {
+        // aqui llamamos al formulario  de la pagina con id totalProveedor
+        totalProveedor = document.getElementById('totalProveedor');
+        // llamamos a la funcion obtner proveedor del controlador productos
+            fetch("@Url.Content("~/Producto/ObtenerProveedor")").
+                then(response => response.json())
+                .then(respuesta => {
+                    console.log(respuesta);
+                    let resultado = "";
+                    //mostramos cantidad
+                    resultado += '<tr taskId=' + respuesta.codigo + '>' + '<td>' + respuesta.length + '</td>'
+                    totalProveedor.innerHTML = resultado;
+            })
+    }
+
+</script>

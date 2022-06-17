@@ -3,19 +3,22 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 // builder.Services.AddSession();
+builder.Services.AddDistributedMemoryCache();
+
+
 
 builder.Services.AddSession(options =>
 
-{ 
+{
 
     options.IdleTimeout = TimeSpan.FromMinutes(30);
+   // options.Cookie.HttpOnly = true;
+    //options.Cookie.IsEssential = true;
     //options.Cookie.Expiration = TimeSpan.FromMinutes(30);
 
 });
 
 var app = builder.Build();
-//activando la session
-app.UseSession();
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
@@ -27,14 +30,13 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
-app.UseSession();
-
 app.UseRouting();
-
 app.UseAuthorization();
+
+app.UseSession();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Acceso}/{action=Logueo}/{id?}");
+    pattern: "{controller=Acceso}/{action=Login}/{id?}");
 
 app.Run();

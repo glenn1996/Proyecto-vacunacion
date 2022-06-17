@@ -1,19 +1,17 @@
-﻿using System.ComponentModel.DataAnnotations;
-namespace Proyecto_vacunacion.Models
+﻿namespace Proyecto_vacunacion.Models
 {
-    public class usuario
+    public class Usuario
     {
-        public int id { get; set; }
+        public int Id { get; set; }
+        public string nombre { get; set; }
+        public string apellido { get; set; }
+        public string cargo { get; set; }
+        public string Correo { get; set; }
+        public string contraseña { get; set; }
 
-        [Required,StringLength(40,MinimumLength =3)]
-        public string login { get; set; }
 
-        [Required,MaxLength(10)]
-        public string clave { get; set; }
+        public string ConfirmarClave { get; set; }
 
-        public int intentos { get; set; }
-
-        public DateTime fbloque { get; set; }
 
     }
 }

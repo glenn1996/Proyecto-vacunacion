@@ -8,53 +8,77 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Proyecto_vacunacion
 build_property.RootNamespace = Proyecto_vacunacion
-build_property.ProjectDir = C:\Users\glenn\Documents\primer proyecto en visual\Proyecto-vacunacion\Proyecto vacunacion\
+build_property.ProjectDir = C:\Users\glenn\Documents\primer proyecto en visual\avance de proyecto\Proyecto-vacunacion\Proyecto vacunacion\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\glenn\Documents\primer proyecto en visual\Proyecto-vacunacion\Proyecto vacunacion
+build_property.MSBuildProjectDirectory = C:\Users\glenn\Documents\primer proyecto en visual\avance de proyecto\Proyecto-vacunacion\Proyecto vacunacion
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/glenn/Documents/primer proyecto en visual/Proyecto-vacunacion/Proyecto vacunacion/Views/Acceso/Logueo.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjZXNvXExvZ3Vlby5jc2h0bWw=
+[C:/Users/glenn/Documents/primer proyecto en visual/avance de proyecto/Proyecto-vacunacion/Proyecto vacunacion/Views/Acceso/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjZXNvXExvZ2luLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/glenn/Documents/primer proyecto en visual/Proyecto-vacunacion/Proyecto vacunacion/Views/ECommerce/Canasta.cshtml]
+[C:/Users/glenn/Documents/primer proyecto en visual/avance de proyecto/Proyecto-vacunacion/Proyecto vacunacion/Views/Acceso/Registrar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjZXNvXFJlZ2lzdHJhci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/glenn/Documents/primer proyecto en visual/avance de proyecto/Proyecto-vacunacion/Proyecto vacunacion/Views/ECommerce/Canasta.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRUNvbW1lcmNlXENhbmFzdGEuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/glenn/Documents/primer proyecto en visual/Proyecto-vacunacion/Proyecto vacunacion/Views/ECommerce/Portal.cshtml]
+[C:/Users/glenn/Documents/primer proyecto en visual/avance de proyecto/Proyecto-vacunacion/Proyecto vacunacion/Views/ECommerce/Portal.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRUNvbW1lcmNlXFBvcnRhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/glenn/Documents/primer proyecto en visual/Proyecto-vacunacion/Proyecto vacunacion/Views/ECommerce/Seleccionar.cshtml]
+[C:/Users/glenn/Documents/primer proyecto en visual/avance de proyecto/Proyecto-vacunacion/Proyecto vacunacion/Views/ECommerce/Seleccionar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRUNvbW1lcmNlXFNlbGVjY2lvbmFyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/glenn/Documents/primer proyecto en visual/Proyecto-vacunacion/Proyecto vacunacion/Views/Home/Index.cshtml]
+[C:/Users/glenn/Documents/primer proyecto en visual/avance de proyecto/Proyecto-vacunacion/Proyecto vacunacion/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/glenn/Documents/primer proyecto en visual/Proyecto-vacunacion/Proyecto vacunacion/Views/Home/Privacy.cshtml]
+[C:/Users/glenn/Documents/primer proyecto en visual/avance de proyecto/Proyecto-vacunacion/Proyecto vacunacion/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/glenn/Documents/primer proyecto en visual/Proyecto-vacunacion/Proyecto vacunacion/Views/Shared/Error.cshtml]
+[C:/Users/glenn/Documents/primer proyecto en visual/avance de proyecto/Proyecto-vacunacion/Proyecto vacunacion/Views/Producto/CrudCategoria.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9cQ3J1ZENhdGVnb3JpYS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/glenn/Documents/primer proyecto en visual/avance de proyecto/Proyecto-vacunacion/Proyecto vacunacion/Views/Producto/CrudProducto.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9cQ3J1ZFByb2R1Y3RvLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/glenn/Documents/primer proyecto en visual/avance de proyecto/Proyecto-vacunacion/Proyecto vacunacion/Views/Producto/CrudProveedor.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9cQ3J1ZFByb3ZlZWRvci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/glenn/Documents/primer proyecto en visual/avance de proyecto/Proyecto-vacunacion/Proyecto vacunacion/Views/Producto/IndexProducto.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9cSW5kZXhQcm9kdWN0by5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/glenn/Documents/primer proyecto en visual/avance de proyecto/Proyecto-vacunacion/Proyecto vacunacion/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/glenn/Documents/primer proyecto en visual/Proyecto-vacunacion/Proyecto vacunacion/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/glenn/Documents/primer proyecto en visual/avance de proyecto/Proyecto-vacunacion/Proyecto vacunacion/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/glenn/Documents/primer proyecto en visual/Proyecto-vacunacion/Proyecto vacunacion/Views/_ViewImports.cshtml]
+[C:/Users/glenn/Documents/primer proyecto en visual/avance de proyecto/Proyecto-vacunacion/Proyecto vacunacion/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/glenn/Documents/primer proyecto en visual/Proyecto-vacunacion/Proyecto vacunacion/Views/_ViewStart.cshtml]
+[C:/Users/glenn/Documents/primer proyecto en visual/avance de proyecto/Proyecto-vacunacion/Proyecto vacunacion/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/glenn/Documents/primer proyecto en visual/Proyecto-vacunacion/Proyecto vacunacion/Views/Shared/_Layout.cshtml]
+[C:/Users/glenn/Documents/primer proyecto en visual/avance de proyecto/Proyecto-vacunacion/Proyecto vacunacion/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-urz2drf0wh
+
+[C:/Users/glenn/Documents/primer proyecto en visual/avance de proyecto/Proyecto-vacunacion/Proyecto vacunacion/Views/Shared/_LayoutAdmin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRBZG1pbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = b-yz2gfnnd22
