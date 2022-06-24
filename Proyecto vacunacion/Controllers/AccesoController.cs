@@ -94,11 +94,11 @@ namespace Proyecto_vacunacion.Controllers
             if ( car == "usuario")
             {
                 
-                HttpContext.Session.SetString(sesion, "usuario");
-                return RedirectToAction("Seleccionar", "ECommerce");
+               // HttpContext.Session.SetString(sesion, "usuario");
+                return RedirectToAction("Principal", "VentaProducto");
             }else if (car == "admin")
             {
-                HttpContext.Session.SetString(sesion, "admin");
+              //  HttpContext.Session.SetString(sesion, "admin");
                 return RedirectToAction("IndexProducto", "Producto");
             }
             else

@@ -10794,11 +10794,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\glenn\\Documents\\primer proyecto en visual\\avance de proyecto\\Proyecto-vacunacion\\Proyecto vacunacion\\Proyecto vacunacion.csproj",
+      "projectUniqueName": "C:\\Users\\glenn\\Desktop\\avance de proyecto\\Proyecto-vacunacion\\Proyecto vacunacion\\Proyecto vacunacion.csproj",
       "projectName": "Proyecto vacunacion",
-      "projectPath": "C:\\Users\\glenn\\Documents\\primer proyecto en visual\\avance de proyecto\\Proyecto-vacunacion\\Proyecto vacunacion\\Proyecto vacunacion.csproj",
+      "projectPath": "C:\\Users\\glenn\\Desktop\\avance de proyecto\\Proyecto-vacunacion\\Proyecto vacunacion\\Proyecto vacunacion.csproj",
       "packagesPath": "C:\\Users\\glenn\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\glenn\\Documents\\primer proyecto en visual\\avance de proyecto\\Proyecto-vacunacion\\Proyecto vacunacion\\obj\\",
+      "outputPath": "C:\\Users\\glenn\\Desktop\\avance de proyecto\\Proyecto-vacunacion\\Proyecto vacunacion\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\glenn\\AppData\\Roaming\\NuGet\\NuGet.Config",

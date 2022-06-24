@@ -9,6 +9,7 @@ namespace Proyecto_vacunacion.Controllers
 {
     public class ECommerceController : Controller
     {
+       
 
         string cadena = @"server = DESKTOP-7IQJ2J4\SQLEXPRESS;database = Negocios2022;Trusted_Connection = True;" +
            "MultipleActiveResultSets = True;TrustServerCertificate = False;Encrypt = False";
@@ -134,6 +135,6 @@ namespace Proyecto_vacunacion.Controllers
 
         }
 
-
+       
     }
 }

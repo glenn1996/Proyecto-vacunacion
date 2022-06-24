@@ -145,9 +145,15 @@ namespace Proyecto_vacunacion.Controllers
             }
             if (Path.GetExtension(f.FileName) != ".jpg")
             {
+                
+
                 ViewBag.mensaje = "Debe ser .JPG";
                 return View(objE);
             }
+
+            string nombreNuevo = objE.nombre+".jpg";
+
+
             List<SqlParameter> lista = new List<SqlParameter>()
              {
 
@@ -164,21 +170,32 @@ namespace Proyecto_vacunacion.Controllers
                   new SqlParameter(){ParameterName="@prov",SqlDbType=SqlDbType.Int,
                Value=objE.proveedor },
                 new SqlParameter(){ParameterName="@fot",SqlDbType=SqlDbType.VarChar,
-                Value="~/img/"+Path.GetFileName(f.FileName) },
+                Value="~/img/"+ nombreNuevo },
 
 
             };
 
-
-
             CRUD("SP_NUEVOPRODUCTO", lista);
-          //f.SaveAs(Path.Combine(Server.MapPath("~/img/"),
-          //Path.GetFileName(f.FileName)));
-            return Content("1");
+
+            try {
 
 
 
 
+                string ruta = Path.Combine("wwwroot/img/", nombreNuevo);
+                using (FileStream newFile = System.IO.File.Create(ruta))
+                {
+                    f.CopyTo(newFile);
+                    newFile.Flush();
+                }
+                return Content("1");
+
+            }
+            catch(Exception error) {
+             
+                return Content(error.ToString());
+            
+            }
 
         }
 

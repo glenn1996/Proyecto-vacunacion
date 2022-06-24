@@ -123,14 +123,6 @@ namespace Proyecto_vacunacion.Controllers
             return Content("1");
         }
 
-        /*ACTUALIZAR PROVEEDOR
-         public ActionResult actualizaProveedor(int id)
-        {
-          Usuario objE = ListadoGeneralA().Where(e => e.Id == id).FirstOrDefault();
-
-        return View(objE);
-        }*/
-
         //ACTUALIZAR PROVEEDOR **
         [HttpPost]
         public ActionResult actualizaProveedor(Usuario objP)

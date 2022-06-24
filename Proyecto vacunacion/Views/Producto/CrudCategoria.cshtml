@@ -8,20 +8,16 @@
 
 <div class="container">
     <div class="my-2">
-        <button id="btnNuevo" type="button" class="btn btn-primary" data-toggle='modal' data-target='#ModalAgregar'>Agregar Administrador</button>
+        <button id="btnNuevo" type="button" class="btn btn-primary" data-toggle='modal' data-target='#ModalAgregar'>Agregar Categoria</button>
     </div>
     <table id="tablaProveedor" class="table">
         <thead class="thead-dark">
             <tr>
                 <th scope="col">#</th>
                 <th scope="col">Nombre</th>
-                <th scope="col">Apellido</th>
-                <th scope="col">Cargo</th>
-                <th scope="col">Correo</th>
-                <th scope="col">Contraseña</th>
+                <th scope="col">Descipcion</th>
                 <th scope="col">Editar</th>
                 <th scope="col">Eliminar</th>
-
             </tr>
         </thead>
         <tbody>
@@ -37,7 +33,7 @@
     <div class="modal-dialog" role="document">
         <div class="col-md-10 modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Agregar Proveedor</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Agregar Categoria</h5>
                 <button id="" type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -46,22 +42,14 @@
 
 
                 <form action="" id="formRegistra" enctype="multipart/form-data">
-                    <input type="hidden" name="Id" id="Id" value="" />
+                    <input type="hidden" name="codigo" id="codigo" value="" />
                     <div class="form-group">
                         <input class="form-control" type="text" name="nombre" placeholder="nombre"
                                id="nombre">
                     </div>
                     <div class="form-group">
-                        <input class="form-control" type="text" name="apellido" placeholder="apellido"
-                               id="apellido">
-                    </div>
-                    <div class="form-group">
-                        <input class="form-control" type="text" name="Correo" placeholder="Correo"
-                               id="Correo">
-                    </div>
-                    <div class="form-group">
-                        <input class="form-control" type="password" name="contraseña" placeholder="contraseña"
-                               id="contraseña">
+                        <input class="form-control" type="text" name="descipcion" placeholder="descipcion"
+                               id="descipcion">
                     </div>
                     <button id="registrar" class="form-control btn btn-primary" type="submit">Registrar</button>
                 </form>
@@ -80,7 +68,7 @@
     <div class="modal-dialog" role="document">
         <div class="col-md-10 modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Actualizar Producto</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Actualizar Categoria</h5>
                 <button id="" type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -89,22 +77,14 @@
 
 
                 <form action="" id="formActualiza" enctype="multipart/form-data">
-                    <input type="hidden" name="Id" id="IdA" value="" />
+                    <input type="hidden" name="codigo" id="codigoA" value="" />
                     <div class="form-group">
                         <input class="form-control" type="text" name="nombre" placeholder="nombre"
                                id="nombreA">
                     </div>
                     <div class="form-group">
-                        <input class="form-control" type="text" name="apellido" placeholder="apellido"
-                               id="apellidoA">
-                    </div>
-                    <div class="form-group">
-                        <input class="form-control" type="text" name="Correo" placeholder="Correo"
-                               id="CorreoA">
-                    </div>
-                    <div class="form-group">
-                        <input class="form-control" type="password" required="" name="contraseña" placeholder="contraseña"
-                               id="contraseñaA">
+                        <input class="form-control" type="text" name="descipcion" placeholder="descipcion"
+                               id="descipcionA">
                     </div>
                     <button id="actualizar" class="form-control btn btn-primary" type="submit">Actualizar</button>
                 </form>
@@ -122,12 +102,9 @@
     
     //RESETEAR
     function resetear() {
-        document.getElementById("Id").value = 0;
+        document.getElementById("codigo").value = 0;
         document.getElementById("nombre").value = "";
-        document.getElementById("apellido").value = "";
-        document.getElementById("cargo").value = "";
-        document.getElementById("Correo").value = "";
-        document.getElementById("contraseña").value = "";
+        document.getElementById("descipcion").value = "";
     }
     
     //LISTAR **
@@ -136,7 +113,7 @@
         var e = 1;
         const table = document.querySelector("tbody");
 
-        fetch("@Url.Content("~/Proveedor/ListaProveedor")").
+        fetch("@Url.Content("~/Categoria/ListaCategoria")").
             then(response => response.json()).
             then(respuesta => {
                 console.log(respuesta)
@@ -144,15 +121,12 @@
                 for (let i = 0; i < respuesta.length; i++) {
 
                     resultado +=
-                        '<tr taskId=' + respuesta[i].id + '>' + '<td>' + e++ + '</td>' +
+                        '<tr taskId=' + respuesta[i].codigo + '>' + '<td>' + e++ + '</td>' +
                         '<td>' + respuesta[i].nombre + '</td>' +
-                        '<td>' + respuesta[i].apellido + '</td>' +
-                        '<td>' + respuesta[i].cargo + '</td>' +
-                        '<td>' + respuesta[i].correo + '</td>' +
-                        '<td>' + respuesta[i].contraseña + '</td>' +
-                        '<td>' + "<button onclick='editar(" + respuesta[i].id + ")'  type='button' data-toggle='modal'  data-target='#ModalActualizar'" +
+                        '<td>' + respuesta[i].descipcion + '</td>' +
+                        '<td>' + "<button onclick='editar(" + respuesta[i].codigo + ")'  type='button' data-toggle='modal'  data-target='#ModalActualizar'" +
                         "class='btn btn-success' id='idEditar'>Editar</button>" + '</td>' +
-                        '<td>' + "<button onclick='elimina(" + respuesta[i].id + ")' type='button'" +
+                        '<td>' + "<button onclick='elimina(" + respuesta[i].codigo + ")' type='button'" +
                         "class='btn btn-danger' id='idEliminar'>Eliminar</button>" + '</td>' +
 
                         '</tr>'
@@ -191,12 +165,12 @@
     const formulario = document.getElementById("formRegistra");
     formulario.addEventListener('submit', function (e) {
                                         //el id de usuario
-        var codigo = document.getElementById("Id").value;
+        var codigo = document.getElementById("codigo").value;
         e.preventDefault();
                                 //utilizamos la const de formulario
         var datos = new FormData(formulario);
                                  //metodo a llamar al controlador
-        fetch("@Url.Content("~/Proveedor/nuevoProveedor")", {
+        fetch("@Url.Content("~/Categoria/nuevoCategoria")", {
             method: 'POST',
             body: datos
         }).
@@ -226,12 +200,12 @@
     //ACTUALIZAR
     const formularioA = document.getElementById("formActualiza");
     formularioA.addEventListener('submit', function (e) {
-        var codigo = document.getElementById("IdA").value;
+        var codigo = document.getElementById("codigo").value;
 
         e.preventDefault();
         var datos = new FormData(formularioA);
 
-        fetch("@Url.Content("~/Proveedor/actualizaProveedor?id=")" + codigo, {
+        fetch("@Url.Content("~/Categoria/actualizaCategoria?id=")" + codigo, {
             method: 'POST',
             body: datos
         }).
@@ -259,15 +233,14 @@
     function editar(id) {
 
 
-        fetch("@Url.Content("~/Proveedor/BuscarProveedor?id=")" + id).
+        fetch("@Url.Content("~/Categoria/BuscarCategoria?id=")" + id).
             then(response => response.json()).
             then(respuesta => {
 
                 console.log(respuesta);
-                    document.getElementById("IdA").value = respuesta.id;
+                    document.getElementById("codigoA").value = respuesta.codigo;
                     document.getElementById("nombreA").value = respuesta.nombre;
-                    document.getElementById("apellidoA").value = respuesta.apellido;
-                    document.getElementById("CorreoA").value = respuesta.correo;
+                    document.getElementById("descipcionA").value = respuesta.descipcion;
                    
 
             });
@@ -289,7 +262,7 @@
         }).then((result) => {
             if (result.isConfirmed) {
               
-                fetch("@Url.Content("~/Proveedor/eliminaProveedor?id=")"+ id).
+                fetch("@Url.Content("~/Categoria/eliminaCategoria?id=")"+ id).
                     then(response => response.json()).
                     then(data => {
                         listarProveedor();

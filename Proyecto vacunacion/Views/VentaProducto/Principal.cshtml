@@ -1,0 +1,61 @@
+﻿
+@{
+    ViewBag.Title = "Principal";
+    Layout = "~/Views/Shared/_LayoutPrincipal.cshtml";
+}
+
+
+
+
+
+<div class="container col-md-11">
+
+
+    <div class="row" id="row">
+        <div class="col-md-12 p-2">
+
+            <div class="card my-2 h-auto">
+                <div id="resultadoProducto" class="card-body">
+                </div>
+            </div>
+
+           
+        </div>
+    </div>
+</div>
+
+
+
+
+<br>
+<br>
+<script>
+    cargarProductos();
+    
+    function cargarProductos() {
+        fetch("/VentaProducto/ListaProducto").
+            then(response => response.json()).
+            then(response => {
+                let resultado = '';
+               
+                console.log(response);
+                for (let i in response) {
+                  
+                    resultado += `<div id="imgSeleccion">
+
+                            <a id="mienlace" href="seleccionaProductos/${response[i].codigo}">
+                            <img id="" class="" src="${response[i].foto.slice(1)}" alt=""></a>
+                            <p> ${response[i].nombre} <br> stockActual : ${response[i].stockActual} <br> S/. ${response[i].precio}</p>
+                            
+                        </div> `
+                }
+
+                document.getElementById("resultadoProducto").innerHTML = resultado;
+                
+            })
+    };
+    
+    
+</script>
+
+

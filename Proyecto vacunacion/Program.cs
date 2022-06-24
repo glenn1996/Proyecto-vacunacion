@@ -2,7 +2,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-// builder.Services.AddSession();
+//builder.Services.AddSession();
 builder.Services.AddDistributedMemoryCache();
 
 
@@ -20,6 +20,9 @@ builder.Services.AddSession(options =>
 
 var app = builder.Build();
 
+app.UseSession();
+
+
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
@@ -32,8 +35,6 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseRouting();
 app.UseAuthorization();
-
-app.UseSession();
 
 app.MapControllerRoute(
     name: "default",
